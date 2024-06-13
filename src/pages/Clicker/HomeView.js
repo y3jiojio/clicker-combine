@@ -2,13 +2,14 @@ import LeaderBoardModal from "../../components/LeaderBoardModal";
 import Mascots from "../../components/Mascots";
 import MascotView from "../../components/MascotView";
 import ProgressSection from "../../components/ProgressSection";
-// import Quest from "../../components/Quest";
+import Quest from "../../components/Quest";
 import { useGlobalContext } from "../../context/ContextProvider";
 import { getCollection, insertCollection } from "../../utils/firebase";
 import { getTodayDate } from "../../utils/fuctions";
 import { mascots } from "../../utils/local.db";
 import React, { useEffect, useState } from "react";
 import { calculateTimeRemaining } from '../../utils/fuctions';
+import '../../styles/globals.css';
 
 const HomeView = ({ gameData, setGameData }) => {
   const { currentUser } = useGlobalContext();
@@ -196,7 +197,7 @@ const HomeView = ({ gameData, setGameData }) => {
           totalPoints={totalPoints}
         />
 
-        {/* <Quest
+        <Quest
           currentMascot={currentMascot}
           gameData={gameData}
           setGameData={setGameData}
@@ -204,7 +205,7 @@ const HomeView = ({ gameData, setGameData }) => {
           totalPoints={totalPoints}
           totalCount={totalCount}
           setTotalCount={setTotalCount}
-        /> */}
+        />
 
         {
           isLeaderBoardOpen && <LeaderBoardModal
